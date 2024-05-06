@@ -1,0 +1,104 @@
+Screen:
+    HomeScreen:
+        id:home
+        name:'home'
+
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: '48dp'
+
+            MDTextField:
+                id: cityName
+                hint_text: 'City Name'
+                multiline: False
+
+
+            MDTextField:
+                id: countryName
+                hint_text: 'Country Name'
+                multiline: False
+
+
+            MDRaisedButton:
+                text: 'Search'
+                md_bg_color: 1, 0.75, 0.79, 1
+                on_release: root.search()
+
+
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0, 0.5, 1
+                Line:
+                    rectangle: self.x + 1, self.y + 1, self.width - 2, self.height - 2
+                    width: 1.5
+
+            Label:
+                text: 'Timeanddate Data'
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0.5, 0, 0.5, 1
+
+            Label:
+                id: timeanddateWeather
+                text: 'Weather: ' + root.timeanddateWeather
+                color: 0, 0, 0, 1
+            Label:
+                id: timeanddateVisibility
+                text: 'Visibility: ' + root.timeanddateVisibility
+                color: 0, 0, 0, 1
+            Label:
+                id: timeanddatePressure
+                text: 'Pressure: ' + root.timeanddatePressure
+                color: 0, 0, 0, 1
+            Label:
+                id: timeanddateHumidity
+                text: 'Humidity: ' + root.timeanddateHumidity
+                color: 0, 0, 0, 1
+
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0, 0.5, 1
+                Line:
+                    rectangle: self.x + 1, self.y + 1, self.width - 2, self.height - 2
+                    width: 1.5
+
+            Label:
+                text: 'Wunderground Data'
+                size_hint_y: None
+                height: self.texture_size[1]
+                color: 0.5, 0, 0.5, 1
+
+
+            Label:
+                id: wundergroundWeather
+                text: 'Weather: ' + root.wundergroundWeather
+                color: 0, 0, 0, 1  # Black
+            Label:
+                id: wundergroundVisibility
+                text: 'Visibility: ' + root.wundergroundVisibility
+                color: 0, 0, 0, 1  # Black
+            Label:
+                id: wundergroundPressure
+                text: 'Pressure: ' + root.wundergroundPressure
+                color: 0, 0, 0, 1  # Black
+            Label:
+                id: wundergroundHumidity
+                text: 'Humidity: ' + root.wundergroundHumidity
+                color: 0, 0, 0, 1
+
